@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimpleSwap DApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SimpleSwap</h1>
+
+        <button onclick="connectWallet()">Conectar Billetera</button>
+        <p id="accountAddress">No conectado</p>
+
+        <div class="mint-box">
+            <h2>Mintear Tokens (Solo Owner)</h2>
+            <label for="mintAmount">Cantidad:</label>
+            <input type="number" id="mintAmount" placeholder="0.0" value="1000" />
+            <button onclick="mintToken('A')">Mintear Token A</button>
+            <button onclick="mintToken('B')">Mintear Token B</button>
+            <p id="mintResult"></p>
+        </div>
+
+        <div class="approve-box">
+            <h2>Aprobar Tokens para SimpleSwap</h2>
+            <label for="approveAmountA">Cantidad Token A:</label>
+            <input type="number" id="approveAmountA" placeholder="0.0" value="1000" />
+            <button onclick="approveToken('A')">Aprobar Token A</button>
+            <br>
+            <label for="approveAmountB">Cantidad Token B:</label>
+            <input type="number" id="approveAmountB" placeholder="0.0" value="1000" />
+            <button onclick="approveToken('B')">Aprobar Token B</button>
+            <p id="approveResult"></p>
+        </div>
+
+        <div class="liquidity-box">
+            <h2>Añadir Liquidez</h2>
+            <label for="amountA_liq">Cantidad Token A:</label>
+            <input type="number" id="amountA_liq" placeholder="0.0" value="100" />
+            <br>
+            <label for="amountB_liq">Cantidad Token B:</label>
+            <input type="number" id="amountB_liq" placeholder="0.0" value="100" />
+            <button onclick="addLiquidity()">Añadir Liquidez</button>
+            <p id="addLiquidityResult"></p>
+        </div>
+
+        <div class="remove-liquidity-box">
+            <h2>Remover Liquidez</h2>
+            <label for="liquidityToBurn">LP Tokens a Quemar:</label>
+            <input type="number" id="liquidityToBurn" placeholder="0.0" value="10" />
+            <button onclick="removeLiquidity()">Remover Liquidez</button>
+            <p id="removeLiquidityResult"></p>
+        </div>
+
+        <div class="swap-box">
+            <h2>Intercambiar Tokens</h2>
+
+            <label for="tokenIn">Token de entrada:</label>
+            <select id="tokenIn">
+                <option value="A">Token A</option>
+                <option value="B">Token B</option>
+            </select>
+
+            <label for="amountIn">Cantidad:</label>
+            <input type="number" id="amountIn" placeholder="0.0" value="1" />
+
+            <button onclick="swap()">Intercambiar</button>
+            <p id="swapResult"></p>
+        </div>
+
+        <div class="price-box">
+            <h2>Precio del Token</h2>
+            <label for="tokenA_price">Token A:</label>
+            <select id="tokenA_price">
+                <option value="A">Token A</option>
+                <option value="B">Token B</option>
+            </select>
+            <label for="tokenB_price">Token B:</label>
+            <select id="tokenB_price">
+                <option value="A">Token A</option>
+                <option value="B">Token B</option>
+            </select>
+            <button onclick="getPrice()">Obtener Precio</button>
+            <p id="priceDisplay"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
