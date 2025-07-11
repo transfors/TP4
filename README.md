@@ -106,7 +106,7 @@ Users can:
     Swap TokenA for TokenB and vice versa
     View the current token price
 
-🔗 Launch the DApp on Vercel ← https://tp-modulo-4-eopc.vercel.app/
+🔗 Launch the DApp on Vercel ← (https://tp-4-git-main-nellys-projects-95defe11.vercel.app/)
 
 ⚙️ Requirements
 
